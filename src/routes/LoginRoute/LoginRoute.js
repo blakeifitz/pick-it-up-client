@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import LoginForm from '../../components/LoginForm/LoginForm';
+import LoginForm from '../../components/login-form/login-form';
 
 class LoginRoute extends Component {
   static defaultProps = {

@@ -22,9 +22,6 @@ class DashboardRoute extends Component {
           <h2>Dashboard</h2>
           <CategoryList categories={categories} />
         </section>
-        <Link to={`/finds`}>
-          <button> Add Finds</button>
-        </Link>
         <Link to={`/locations`}>
           <button>Add Location</button>
         </Link>

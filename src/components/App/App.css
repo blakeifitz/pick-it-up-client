@@ -105,6 +105,15 @@ p {
   font-size: 18px;
 }
 
+.leaflet-container {
+  height: 50vh;
+  width: 50vw;
+  margin: auto;
+}
+.button-group {
+  display: flex;
+  flex-direction: row;
+}
 @media all and (max-width: 530px) {
   li {
     list-style: none;

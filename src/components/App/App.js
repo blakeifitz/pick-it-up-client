@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Header from '../Header/Header';
+import Header from '../header/header';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import PublicOnlyRoute from '../PublicOnlyRoute/PublicOnlyRoute';
 import RegistrationRoute from '../../routes/RegistrationRoute/RegistrationRoute';
 import LoginRoute from '../../routes/LoginRoute/LoginRoute';
 import DashboardRoute from '../../routes/DashboardRoute/DashboardRoute';
 import NotFoundRoute from '../../routes/NotFoundRoute/NotFoundRoute';
-import AddItemsRoute from '../../routes/AddItemsRoute';
-import AddLocationRoute from '../../routes/AddLocationRoute';
+import AddRoute from '../../routes/AddRoute';
 import DisplayRoute from '../../routes/DisplayRoute';
-import './App.css';
+import './app.css';
 
 export default class App extends Component {
   state = { hasError: false };
@@ -29,9 +28,8 @@ export default class App extends Component {
           {hasError && <p>There was an error! Oh no!</p>}
           <Switch>
             <PrivateRoute exact path={'/'} component={DashboardRoute} />
-            <PrivateRoute path={'/finds'} component={AddItemsRoute} />
             <PrivateRoute path={'/finds/:cat'} component={DisplayRoute} />
-            <PrivateRoute path={'/locations'} component={AddLocationRoute} />
+            <PrivateRoute path={'/locations'} component={AddRoute} />
             <PublicOnlyRoute path={'/register'} component={RegistrationRoute} />
             <PublicOnlyRoute path={'/login'} component={LoginRoute} />
             <Route component={NotFoundRoute} />
