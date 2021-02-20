@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 export class CategoryList extends Component {
   render() {
-    let categories = ['Artifacts', 'Fossils', 'Foraging'];
+    let categories = ['Fossils', 'Artifacts', 'Foraging'];
+
     return (
       <section>
         <h2>Categories</h2>

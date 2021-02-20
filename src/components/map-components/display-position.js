@@ -1,23 +1,21 @@
 import { React, useState, useCallback, useEffect } from 'react';
 
-export default function DisplayPosition({ map }, props) {
-  const [position, setPosition] = useState(map.getCenter());
-
+export default function DisplayPosition(props) {
+  const [position, setPosition] = useState(props.map.getCenter());
   const onMove = useCallback(
     (e) => {
       setPosition(e.latlng);
     },
-    [map]
+    [props.map]
   );
 
-  function getLocation(position) {
-    props.handleLocation(position);
+  function getLocation() {
+    props.handleLocation(props.map.getCenter());
   }
 
   useEffect(() => {
-    map.on('click', onMove);
+    props.map.on('click', onMove);
   });
-
   return (
     <p>
       latitude: {position.lat.toFixed(3)}, longitude: {position.lng.toFixed(3)}{' '}

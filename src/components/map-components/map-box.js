@@ -6,7 +6,7 @@ import LocationMarker from './location-marker';
 const center = [39.479, -84.058];
 const zoom = 13;
 
-export default function MapBox(props) {
+export default function MapBox({ handleLocation }) {
   const [map, setMap] = useState(null);
   const displayMap = useMemo(
     () => (
@@ -32,7 +32,7 @@ export default function MapBox(props) {
       {map ? (
         <div>
           {' '}
-          <DisplayPosition map={map} />
+          <DisplayPosition handleLocation={handleLocation} map={map} />
         </div>
       ) : null}
     </div>
