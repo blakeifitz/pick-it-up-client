@@ -1,0 +1,31 @@
+.category-nav {
+  list-style-type: none;
+  margin: 130px 0 0;
+  padding: 0;
+  max-height: 100%;
+}
+
+.category-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+}
+
+.category-link {
+  color: #b5b3b3;
+  font-size: 20px;
+  margin: 0 0 8px auto;
+  max-width: 180px;
+  padding: 0px 10px 5px 0;
+  text-decoration: none;
+  border-radius: 10px;
+}
+.category-link:hover {
+  color: rgb(238, 213, 101);
+  cursor: pointer;
+}
+.category-link.active {
+  background-color: #3f4247;
+}

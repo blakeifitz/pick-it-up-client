@@ -1,9 +1,9 @@
 import React from 'react';
 import AddLocation from './add-location';
-import FormInputs from './form-inputs';
+import FormInputs from '../form-inputs';
 import axios from 'axios';
 
-class Form extends React.Component {
+class AddForm extends React.Component {
   state = {
     location: null,
     items: [{ name: '', desc: '', img: '' }],
@@ -55,6 +55,7 @@ class Form extends React.Component {
       <div>
         {this.state.location === null ? (
           <AddLocation
+            locations={this.props.locations}
             handleLocation={(location) => {
               this.handleLocation(location);
             }}
@@ -63,12 +64,6 @@ class Form extends React.Component {
           <div>
             {' '}
             <form onChange={this.handleChange}>
-              <label htmlFor="category">What category is this for?</label>
-              <select>
-                <option>Category #1</option>
-                <option>Category #2</option>
-                <option>Category #3</option>
-              </select>
               <button onClick={this.addItem}>Add another item</button>
               <FormInputs items={items} />
             </form>
@@ -79,4 +74,4 @@ class Form extends React.Component {
     );
   }
 }
-export default Form;
+export default AddForm;

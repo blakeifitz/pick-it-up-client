@@ -17,16 +17,16 @@ class LoginForm extends Component {
 
   handleSubmit = (ev) => {
     ev.preventDefault();
-    const { user_name, password } = ev.target;
+    const { username, password } = ev.target;
 
     this.setState({ error: null });
 
     AuthApiService.postLogin({
-      user_name: user_name.value,
+      username: username.value,
       password: password.value,
     })
       .then((res) => {
-        user_name.value = '';
+        username.value = '';
         password.value = '';
         this.context.processLogin(res.authToken);
         this.props.onLoginSuccess();
@@ -50,7 +50,7 @@ class LoginForm extends Component {
           <Input
             ref={this.firstInput}
             id="login-username-input"
-            name="user_name"
+            name="username"
             required
           />
         </div>

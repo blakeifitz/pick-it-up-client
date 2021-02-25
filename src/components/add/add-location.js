@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import MapBox from './map-components/map-box';
+import MapBox from '../map-components/map-box';
 
 export class AddLocation extends Component {
   state = {
     addNew: false,
     addLocationOnly: false,
+    locations: [],
   };
   getLocation() {
     this.props.handleLocation('location');
@@ -13,6 +14,7 @@ export class AddLocation extends Component {
     this.setState({ addLocationOnly: !this.state.addLocationOnly });
   }
   render() {
+    let { locations } = this.props;
     return (
       <div>
         <h2> Location</h2>
@@ -20,9 +22,13 @@ export class AddLocation extends Component {
           <div>
             <label htmlFor="category">What is the location?</label>
             <select>
-              <option>My Place #1</option>
-              <option>My Place #2</option>
-              <option>My Place #3</option>
+              {locations.map((location, i) => {
+                return (
+                  <option key={i} value={location.id}>
+                    {location.name}
+                  </option>
+                );
+              })}
             </select>
 
             <p>or</p>

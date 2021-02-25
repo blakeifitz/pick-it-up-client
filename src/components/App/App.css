@@ -8,7 +8,6 @@ html {
 
 body {
   font-family: 'Inter', Helvetica;
-  text-align: center;
 }
 
 h2 {
@@ -16,13 +15,6 @@ h2 {
 }
 h4 {
   text-decoration: underline;
-}
-
-main {
-  position: relative;
-}
-section {
-  background-color: rgba(226, 226, 226, 0.6);
 }
 
 .group {
@@ -86,20 +78,6 @@ button:hover {
   background-color: black;
   transition: 0.75s;
 }
-li {
-  list-style: none;
-  display: inline-block;
-  vertical-align: top;
-  padding: 5px;
-}
-li p {
-  text-align: left;
-  font-size: 2vw;
-}
-ul {
-  margin: 0 auto;
-  text-align: center;
-}
 
 p {
   font-size: 18px;
@@ -114,14 +92,7 @@ p {
   display: flex;
   flex-direction: row;
 }
-@media all and (max-width: 530px) {
-  li {
-    list-style: none;
-    display: block;
-    padding: 5px;
-  }
-  li p {
-    text-align: left;
-    font-size: large;
-  }
+
+#mapid {
+  height: 200px;
 }

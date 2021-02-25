@@ -1,0 +1,45 @@
+.item {
+  --item-height: 120px;
+  background-color: #27292c;
+  color: lightgrey;
+  height: var(--item-height);
+  margin-bottom: 8px;
+  width: 100%;
+  padding: 8px 0 8px 8px;
+  position: relative;
+}
+
+.item-delete {
+  background-color: #27292c;
+  border: 0;
+  color: #b5b3b3;
+  float: right;
+  font-size: 12px;
+}
+.item-delete:hover {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.item-title {
+  color: #b5b3b3;
+  font-size: 20px;
+  margin: 0;
+  max-width: 80%;
+  min-height: 24px;
+}
+.item-title a {
+  color: #b5b3b3;
+  display: block;
+  text-decoration: none;
+}
+.item-title a:hover {
+  color: rgb(238, 213, 101);
+}
+
+.item-img {
+  height: var(--item-height);
+  width: auto;
+}

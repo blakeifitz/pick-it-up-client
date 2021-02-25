@@ -1,0 +1,40 @@
+.dashboard {
+  display: grid;
+  grid-template-areas: 'categories main-list' 'info main-list';
+  grid-template-columns: 33% 66%;
+  grid-template-rows: 33% 66%;
+  height: 80vh;
+}
+
+.categories {
+  grid-area: categories;
+  color: #fff;
+  max-width: 300px;
+}
+.info {
+  grid-area: info;
+  text-shadow: 2px 1px 2px black;
+  display: block;
+  max-width: 300px;
+}
+
+.main-list {
+  grid-area: main-list;
+}
+.add-button {
+  background-color: #cacaca;
+  border-radius: 30px;
+  border: 0;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  height: 60px;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  width: 60px;
+}
+
+.add-button:hover {
+  cursor: pointer;
+}
