@@ -38,6 +38,12 @@ export class ItemPageLocation extends Component {
             <p>Type of Minerals: {this.state.rocktypes}</p>
           </div>
         )}
+        <button
+          className="item-location-back"
+          onClick={() => this.props.history.goBack()}
+        >
+          Back
+        </button>
       </section>
     );
   }

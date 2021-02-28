@@ -14,10 +14,11 @@
 .info {
   grid-area: info;
   text-shadow: 1px 0px 2px rgb(43, 42, 42);
+  margin-top: 12px;
   max-width: auto;
   pointer-events: none;
 }
-x .main-list {
+.main-list {
   grid-area: main-list;
 }
 

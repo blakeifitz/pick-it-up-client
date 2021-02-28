@@ -8,6 +8,7 @@ const FormInputs = (props) => {
       <div key={i}>
         <label htmlFor={itemId}>{`${i + 1}. Name: `}</label>
         <input
+          required
           type="text"
           name={itemId}
           data-id={i}
@@ -17,6 +18,7 @@ const FormInputs = (props) => {
         />
         <label htmlFor={descId}>Description:</label>
         <input
+          required
           type="text"
           name={descId}
           data-id={i}
@@ -30,9 +32,7 @@ const FormInputs = (props) => {
           name={imgId}
           data-id={i}
           id={imgId}
-          defaultValue={
-            'https://firebasestorage.googleapis.com/v0/b/pick-it-up-897da.appspot.com/o/images%2Fno-image.png?alt=media'
-          }
+          defaultValue=""
           className="img"
         />
       </div>

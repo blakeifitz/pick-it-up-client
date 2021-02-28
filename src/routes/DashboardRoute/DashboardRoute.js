@@ -8,7 +8,11 @@ import AddCategory from '../../components/add/add-category';
 import ImageCarousel from '../../components/carousel/carousel';
 import './dashboard.css';
 import { Switch, Route } from 'react-router-dom';
-import { getItemsForCategory, getItem } from '../../misc-functions';
+import {
+  getItemsForCategory,
+  getItem,
+  getSliderData,
+} from '../../misc-functions';
 import AddForm from '../../components/add/add-item-form';
 import ItemPageImg from '../../components/items/item-page-image';
 import ItemPageLocation from '../../components/items/item-page-location';
@@ -100,7 +104,7 @@ class DashboardRoute extends Component {
           />
         ))}
         <Route
-          path="/finds/details/:itemName"
+          path="/finds/details/:itemId"
           render={(routeProps) => {
             return <ItemPageImg item={item} {...routeProps} />;
           }}
@@ -134,7 +138,7 @@ class DashboardRoute extends Component {
             }}
           />
           <Route
-            path="/finds/details/:itemName"
+            path="/finds/details/:itemId"
             render={(routeProps) => {
               return (
                 <ItemPage
@@ -173,7 +177,7 @@ class DashboardRoute extends Component {
     );
   }
 
-  renderBottom(item, locations) {
+  renderBottom(item, locations, sliderData) {
     return (
       <>
         {['/finds', '/finds/:category'].map((path) => (
@@ -182,12 +186,12 @@ class DashboardRoute extends Component {
             key={path}
             path={path}
             render={(routeProps) => {
-              return <ImageCarousel {...routeProps} item={item} />;
+              return <ImageCarousel {...routeProps} sliderData={sliderData} />;
             }}
           />
         ))}
         <Route
-          path="/finds/details/:itemName"
+          path="/finds/details/:itemId"
           render={(routeProps) => {
             return (
               <ItemPageLocation
@@ -205,8 +209,9 @@ class DashboardRoute extends Component {
   render() {
     const { locations, categories, items } = this.state;
     const { category } = this.props.match.params;
-    const { itemName } = this.props.match.params;
-    const item = getItem(items, itemName);
+    const { itemId } = this.props.match.params;
+    const item = getItem(items, itemId);
+    const sliderData = getSliderData(items);
 
     return (
       <div className="dashboard">
@@ -216,7 +221,9 @@ class DashboardRoute extends Component {
         <div className="main-list">
           {this.renderMain(item, items, category, locations)}
         </div>
-        <div className="info">{this.renderBottom(item, locations)}</div>
+        <div className="info">
+          {this.renderBottom(item, locations, sliderData)}
+        </div>
       </div>
     );
   }

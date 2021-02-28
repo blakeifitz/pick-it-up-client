@@ -17,6 +17,7 @@
   cursor: pointer;
   user-select: none;
   opacity: 0.5;
+  pointer-events: auto;
 }
 
 .left-arrow {
@@ -28,6 +29,7 @@
   cursor: pointer;
   user-select: none;
   opacity: 0.5;
+  pointer-events: auto;
 }
 
 .slide {
@@ -43,6 +45,7 @@
   opacity: 1;
   transition-duration: 0.7s;
   transform: scale(1.08);
+  pointer-events: none;
 }
 
 .slider {

@@ -41,14 +41,16 @@ export class AddCategory extends Component {
     return (
       <section className="add-category">
         <h2>Create a category</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form className="registration-content" onSubmit={this.handleSubmit}>
           <div role="alert">{error && <p>{error}</p>}</div>
           <div className="field">
             <label htmlFor="category-title-input">Category Title:</label>
             <input type="text" id="category-title-input" />
           </div>
           <div className="buttons">
-            <button type="submit">Add category</button>
+            <button id="submit-form" type="submit">
+              Add category
+            </button>
           </div>
         </form>
       </section>

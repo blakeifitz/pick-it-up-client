@@ -6,6 +6,7 @@ export default class CategoryList extends Component {
   render() {
     return (
       <div className="category-nav">
+        <h3>Your Categories</h3>
         <ul className="category-list">
           {this.props.categories.map((cat, i) => (
             <li key={i}>

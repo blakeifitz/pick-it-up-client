@@ -48,7 +48,7 @@ export default class ItemList extends Component {
         {category && (
           <div className="list-button-group">
             <Link to={`${category}/new`}>
-              <button className="add-button">+Add</button>
+              <button className="add-button">+Add Item</button>
             </Link>
             <button onClick={(e) => this.handleClickDelete(e)}>
               Delete Category

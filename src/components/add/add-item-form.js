@@ -19,10 +19,9 @@ class AddForm extends React.Component {
   uploadHandler = (data) => {
     const imgData = new FormData();
     imgData.append('file', data, data.name);
-    axios.post(`${config.API_ENDPOINT}/image`, imgData).then((res) => {
-      console.log('RESPONSE', res.data);
-    });
+    axios.post(`${config.API_ENDPOINT}/image`, imgData);
   };
+
   setLocationId(location) {
     this.setState({ locationId: location });
   }
@@ -50,18 +49,19 @@ class AddForm extends React.Component {
       if (item.img === '' || !item.img) {
         item.img =
           'https://firebasestorage.googleapis.com/v0/b/pick-it-up-897da.appspot.com/o/images%2Fno-image.png?alt=media';
+      } else if (item.img.includes('fakepath')) {
+        item.img =
+          'https://firebasestorage.googleapis.com/v0/b/pick-it-up-897da.appspot.com/o/images%2F' +
+          item.img.replace('C:\\fakepath\\', '') +
+          '?alt=media';
       }
       const newItem = {
         name: item.name,
-        img_src:
-          'https://firebasestorage.googleapis.com/v0/b/pick-it-up-897da.appspot.com/o/images%2F' +
-          item.img.replace('C:\\fakepath\\', '') +
-          '?alt=media',
+        img_src: item.img,
         description: item.desc,
         category: category,
         location: parseFloat(this.state.locationId),
       };
-      console.log('NEWITEM', newItem);
       fetch(`${config.API_ENDPOINT}/item`, {
         method: 'POST',
         headers: {
@@ -109,8 +109,10 @@ class AddForm extends React.Component {
               <div role="alert">{error && <p>{error}</p>}</div>
               <button onClick={this.addItem}>Add another item</button>
               <FormInputs items={items} />
+              <button id="submit-form" onClick={(e) => this.handleSubmit(e)}>
+                Save
+              </button>
             </form>
-            <button onClick={(e) => this.handleSubmit(e)}>Save</button>
           </div>
         )}
       </div>

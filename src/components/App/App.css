@@ -1,5 +1,5 @@
 html {
-  background: url(./bg.png) no-repeat center center fixed;
+  background: url(../media/bg.png) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -19,6 +19,8 @@ h2 {
 h3 {
   font-size: 26px;
   font-weight: 400;
+  color: black;
+  text-align: center;
 }
 h4 {
   text-decoration: underline;
@@ -43,6 +45,7 @@ footer {
 a {
   text-decoration: none;
   color: black;
+  cursor: pointer;
 }
 
 a:hover {
@@ -71,6 +74,7 @@ button {
   border: none;
   padding: 10px;
   border-radius: 2px;
+  cursor: pointer;
 }
 
 button[type='submit'] {
@@ -199,6 +203,10 @@ footer .leaflet-container {
   border-color: rgba(10, 10, 10, 0.8);
   background-color: rgba(10, 10, 10, 0.493);
 }
+
+.item-location-back {
+  visibility: hidden;
+}
 #mapid {
   height: 200px;
 }
@@ -206,15 +214,22 @@ footer .leaflet-container {
 #mapid {
   height: 200px;
 }
-
+#submit-form {
+  margin-top: 5px;
+}
 @media all and (max-width: 470px) {
-  .slider {
-    display: none;
-  }
-  .item-delete {
-    display: none;
-  }
   .small-message {
     position: inherit;
+  }
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+  }
+  .item-page-back {
+    display: none;
+  }
+  .item-location-back {
+    visibility: visible;
+    pointer-events: auto;
   }
 }

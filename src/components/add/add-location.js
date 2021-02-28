@@ -47,7 +47,9 @@ export class AddLocation extends Component {
         this.setState({ error: res.error });
       });
   }
-
+  setLocation(location) {
+    this.setState({ location });
+  }
   handleSave(e) {
     e.preventDefault(e);
     let locationId = e.target['location-select'].value;
@@ -97,7 +99,9 @@ export class AddLocation extends Component {
                 this.setLocation(location);
               }}
             />
-            <button type="submit">Submit</button>
+            <button id="submit-form" type="submit">
+              Submit
+            </button>
           </form>
         )}
         <br />

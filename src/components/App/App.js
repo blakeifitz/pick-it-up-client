@@ -30,7 +30,7 @@ export default class App extends Component {
               '/finds/:category/new',
               '/finds/category/new',
               '/finds/:category',
-              '/finds/details/:itemName',
+              '/finds/details/:itemId',
             ].map((path) => (
               <PrivateRoute
                 exact
