@@ -12,6 +12,7 @@ import { getItemsForCategory, getItem } from '../../misc-functions';
 import AddForm from '../../components/add/add-item-form';
 import ItemPageImg from '../../components/items/item-page-image';
 import ItemPageLocation from '../../components/items/item-page-location';
+import BackButton from '../../components/back-button';
 
 class DashboardRoute extends Component {
   static defaultProps = {
@@ -80,8 +81,12 @@ class DashboardRoute extends Component {
           categories: [],
         });
   }
-
-  renderTop(categories, item) {
+  handleDeleteItem = (itemId) => {
+    this.setState({
+      items: this.state.items.filter((item) => item.id !== itemId),
+    });
+  };
+  renderTop(categories, item, category) {
     return (
       <>
         {['/finds', '/finds/:category'].map((path) => (
@@ -98,6 +103,13 @@ class DashboardRoute extends Component {
           path="/finds/details/:itemName"
           render={(routeProps) => {
             return <ItemPageImg item={item} {...routeProps} />;
+          }}
+        />
+
+        <Route
+          path="/finds/:category/new"
+          render={(routeProps) => {
+            return <BackButton category={category} {...routeProps} />;
           }}
         />
       </>
@@ -126,6 +138,9 @@ class DashboardRoute extends Component {
             render={(routeProps) => {
               return (
                 <ItemPage
+                  handleDeleteItem={(itemId) => {
+                    this.handleDeleteItem(itemId);
+                  }}
                   item={item}
                   locations={locations}
                   category={category}
@@ -141,7 +156,15 @@ class DashboardRoute extends Component {
               path={path}
               render={(routeProps) => {
                 const itemsForCategory = getItemsForCategory(items, category);
-                return <ItemList {...routeProps} items={itemsForCategory} />;
+                return (
+                  <ItemList
+                    handleDeleteItem={(itemId) => {
+                      this.handleDeleteItem(itemId);
+                    }}
+                    {...routeProps}
+                    items={itemsForCategory}
+                  />
+                );
               }}
             />
           ))}
@@ -187,13 +210,13 @@ class DashboardRoute extends Component {
 
     return (
       <div className="dashboard">
-        <section className="categories">
-          {this.renderTop(categories, item)}
-        </section>
-        <section className="main-list">
+        <div className="categories">
+          {this.renderTop(categories, item, category)}
+        </div>
+        <div className="main-list">
           {this.renderMain(item, items, category, locations)}
-        </section>
-        <section className="info">{this.renderBottom(item, locations)}</section>
+        </div>
+        <div className="info">{this.renderBottom(item, locations)}</div>
       </div>
     );
   }

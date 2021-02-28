@@ -1,20 +1,30 @@
+#category-title-input {
+  display: block;
+  max-width: 500px;
+}
+
 .item {
   --item-height: 120px;
   background-color: #27292c;
   color: lightgrey;
   height: var(--item-height);
-  margin-bottom: 8px;
-  width: 100%;
-  padding: 8px 0 8px 8px;
-  position: relative;
+  width: 90%;
+  margin: 8px 0 8px 8px;
 }
 
 .item-delete {
-  background-color: #27292c;
+  --item-button-height: 32px;
+  background-color: #041a3a;
   border: 0;
-  color: #b5b3b3;
+  color: #bdbcbc;
   float: right;
   font-size: 12px;
+  height: var(--item-button-height);
+  position: relative;
+  top: calc((var(--item-button-height) + 32px) * -1);
+  transform-origin: right bottom;
+  transform: rotate(-90deg);
+  width: calc(var(--item-height));
 }
 .item-delete:hover {
   background-color: red;
@@ -28,11 +38,11 @@
   font-size: 20px;
   margin: 0;
   max-width: 80%;
-  min-height: 24px;
+  min-height: 32px;
 }
 .item-title a {
   color: #b5b3b3;
-  display: block;
+  position: relative;
   text-decoration: none;
 }
 .item-title a:hover {
@@ -40,6 +50,7 @@
 }
 
 .item-img {
-  height: var(--item-height);
+  margin-top: -32px;
+  height: 100%;
   width: auto;
 }

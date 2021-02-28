@@ -45,7 +45,10 @@ export default class App extends Component {
               component={DashboardRoute}
             />
             <PublicOnlyRoute path={'/register'} component={RegistrationRoute} />
-            <PublicOnlyRoute path={'/login'} component={LoginRoute} />
+            {['/', 'login'].map((path) => (
+              <PublicOnlyRoute path={path} key={path} component={LoginRoute} />
+            ))}
+
             <Route component={NotFoundRoute} />
           </Switch>
         </main>

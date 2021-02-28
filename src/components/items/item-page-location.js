@@ -25,7 +25,7 @@ export class ItemPageLocation extends Component {
   render() {
     let location = getLocation(this.props.item, this.props.locations);
     return (
-      <div>
+      <section className="location-info">
         {location === undefined ? (
           <p>loading...</p>
         ) : (
@@ -38,7 +38,7 @@ export class ItemPageLocation extends Component {
             <p>Type of Minerals: {this.state.rocktypes}</p>
           </div>
         )}
-      </div>
+      </section>
     );
   }
 }

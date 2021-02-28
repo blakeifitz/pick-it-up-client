@@ -7,7 +7,13 @@ export class ItemPageImg extends Component {
     },
   };
   render() {
-    return <img src={this.props.item.img_src} alt="item-image"></img>;
+    return (
+      <img
+        className="item-page-img"
+        src={this.props.item.img_src}
+        alt="item-image"
+      />
+    );
   }
 }
 

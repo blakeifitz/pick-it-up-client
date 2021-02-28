@@ -5,13 +5,10 @@ export default function DisplayPosition(props) {
   const onMove = useCallback(
     (e) => {
       setPosition(e.latlng);
+      props.setLocation(props.map.getCenter());
     },
     [props.map]
   );
-
-  function getLocation() {
-    props.handleLocation(props.map.getCenter());
-  }
 
   useEffect(() => {
     props.map.on('click', onMove);
@@ -19,7 +16,6 @@ export default function DisplayPosition(props) {
   return (
     <p>
       latitude: {position.lat.toFixed(3)}, longitude: {position.lng.toFixed(3)}{' '}
-      <button onClick={(e) => getLocation(e)}>Save</button>
     </p>
   );
 }

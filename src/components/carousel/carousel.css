@@ -1,17 +1,15 @@
 .slider-image {
   position: absolute;
   max-width: 100%;
-  width: auto;
-  height: 100%;
+  height: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .right-arrow {
   position: absolute;
-  top: 75%;
   right: 32px;
   font-size: 2rem;
   color: black;
@@ -23,7 +21,6 @@
 
 .left-arrow {
   position: absolute;
-  top: 75%;
   left: 32px;
   font-size: 2rem;
   color: black;
@@ -40,13 +37,12 @@
 
 .slide.active {
   position: relative;
-  width: 250px;
-  height: 170px;
+  height: 400px;
+  width: 90%;
   overflow: hidden;
   opacity: 1;
   transition-duration: 0.7s;
   transform: scale(1.08);
-  border-radius: 10px;
 }
 
 .slider {

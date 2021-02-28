@@ -11,13 +11,13 @@ class LoginRoute extends Component {
 
   handleLoginSuccess = () => {
     const { location, history } = this.props;
-    const destination = (location.state || {}).from || '/';
+    const destination = (location.state || {}).from || '/finds';
     history.push(destination);
   };
 
   render() {
     return (
-      <section>
+      <section className="login-content">
         <h2>Login</h2>
         <span>
           <i>Demo Account:</i> Username: admin | Password: pass

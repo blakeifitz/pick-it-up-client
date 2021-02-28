@@ -13,13 +13,16 @@
 }
 .info {
   grid-area: info;
-  text-shadow: 2px 1px 2px black;
-  display: block;
-  max-width: 300px;
+  text-shadow: 1px 0px 2px rgb(43, 42, 42);
+  max-width: auto;
+  pointer-events: none;
+}
+x .main-list {
+  grid-area: main-list;
 }
 
-.main-list {
-  grid-area: main-list;
+.location-info {
+  margin-top: 30%;
 }
 .add-button {
   background-color: #cacaca;
@@ -37,4 +40,37 @@
 
 .add-button:hover {
   cursor: pointer;
+}
+
+.item-page-section p {
+  padding: 5px;
+  text-align: center;
+  font-size: 28px;
+}
+
+.item-page-section button {
+  float: right;
+}
+
+.list-button-group {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 5px;
+}
+.back-category-name {
+  color: #b5b3b3;
+  font-size: 40px;
+  height: 50vh;
+  margin: 0 0 0 auto;
+  text-orientation: upright;
+  width: 75px;
+  writing-mode: vertical-lr;
+}
+.back-button-component {
+  margin: 35px 20px 25px 25px;
+}
+
+.location-form {
+  display: flex;
+  flex-direction: column;
 }

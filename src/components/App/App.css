@@ -12,9 +12,19 @@ body {
 
 h2 {
   font-size: 30px;
+  font-weight: 400;
+  text-decoration: underline;
+  text-align: center;
+}
+h3 {
+  font-size: 26px;
+  font-weight: 400;
 }
 h4 {
   text-decoration: underline;
+}
+footer {
+  position: relative;
 }
 
 .group {
@@ -28,15 +38,6 @@ h4 {
 
 .item-double {
   flex: 2;
-}
-
-.guess-group {
-  text-align: left;
-  font-weight: 400;
-}
-input[type='text'],
-input[type='password'] {
-  padding: 5px;
 }
 
 a {
@@ -72,6 +73,11 @@ button {
   border-radius: 2px;
 }
 
+button[type='submit'] {
+  margin-top: 10px;
+  width: 50%;
+  max-width: 400px;
+}
 button:hover {
   border: none;
   color: #c9dada;
@@ -82,8 +88,101 @@ button:hover {
 p {
   font-size: 18px;
 }
+input[type='text'],
+input[type='password'],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+input[type='text']:focus,
+input[type='password']:focus {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  background-color: rgba(233, 224, 201, 0.6);
+  border: 3px solid #555;
+}
 
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-weight: 450;
+}
+
+input[type='submit'] {
+  background-color: rgba(226, 226, 226, 0.6);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+footer .leaflet-container {
+  height: 50vh;
+  width: 50vw;
+  margin: auto;
+}
+.button-group {
+  display: flex;
+  flex-direction: row;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus,
+.register a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.registration-content {
+  background-color: whitesmoke;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.login-content {
+  background-color: rgba(226, 226, 226, 0.6);
+  margin: 8% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: center;
+}
+.registration {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(10, 10, 10, 0.493);
+}
+.small-message {
+  position: absolute;
+  bottom: 0;
+  font-weight: 200;
+  font-size: smaller;
+  padding-left: 5px;
+}
 .leaflet-container {
+  margin-top: 5px;
   height: 50vh;
   width: 50vw;
   margin: auto;
@@ -93,6 +192,29 @@ p {
   flex-direction: row;
 }
 
+.item-page-img {
+  padding: 5px 0px 0px 5px;
+  border-width: 0px 6px 6px 0px;
+  border-style: double;
+  border-color: rgba(10, 10, 10, 0.8);
+  background-color: rgba(10, 10, 10, 0.493);
+}
 #mapid {
   height: 200px;
+}
+
+#mapid {
+  height: 200px;
+}
+
+@media all and (max-width: 470px) {
+  .slider {
+    display: none;
+  }
+  .item-delete {
+    display: none;
+  }
+  .small-message {
+    position: inherit;
+  }
 }

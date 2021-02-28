@@ -30,7 +30,9 @@ const FormInputs = (props) => {
           name={imgId}
           data-id={i}
           id={imgId}
-          defaultValue={props.items[i].desc}
+          defaultValue={
+            'https://firebasestorage.googleapis.com/v0/b/pick-it-up-897da.appspot.com/o/images%2Fno-image.png?alt=media'
+          }
           className="img"
         />
       </div>

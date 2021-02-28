@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Input, Required, Label } from '../form/Form';
 import AuthApiService from '../../services/auth-api-service';
 import Button from '../button/button';
 import './RegistrationForm.css';
 
 class RegistrationForm extends Component {
+  static defaultProps = {
+    history: {
+      push: () => {},
+    },
+  };
   static defaultProps = {
     onRegistrationSuccess: () => {},
   };
@@ -14,9 +18,15 @@ class RegistrationForm extends Component {
 
   firstInput = React.createRef();
 
+  handleClickCancel = () => {
+    this.props.history.push('/login');
+  };
   handleSubmit = (ev) => {
     ev.preventDefault();
-    const { name, username, password } = ev.target;
+    const { name, username, password, confirmPassword } = ev.target;
+    if (password.value !== confirmPassword.value) {
+      return this.setState({ error: 'Passwords do not match' });
+    }
     AuthApiService.postUser({
       name: name.value,
       username: username.value,
@@ -40,44 +50,69 @@ class RegistrationForm extends Component {
   render() {
     const { error } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div role="alert">{error && <p>{error}</p>}</div>
-        <div>
-          <Label htmlFor="registration-name-input">
-            Enter your name
-            <Required />
-          </Label>
-          <Input
-            ref={this.firstInput}
-            id="registration-name-input"
-            name="name"
-            required
-          />
+      <section id="registration" className="registration">
+        <div className="registration-content">
+          <span onClick={this.handleClickCancel} className="close">
+            &times;
+          </span>
+          <form
+            onSubmit={this.handleSubmit}
+            className="singup-form"
+            aria-label="signup-form"
+          >
+            <h2>Create an Account</h2>
+            <div role="alert">{error && <p>{error}</p>}</div>
+            <div>
+              <label htmlFor="registration-name-input">Enter your name:</label>
+              <input
+                ref={this.firstInput}
+                id="registration-name-input"
+                name="name"
+                type="text"
+                placeholder="Full Name"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="registration-username-input">
+                Choose a username:
+              </label>
+              <input
+                id="registration-username-input"
+                name="username"
+                type="text"
+                placeholder="Username"
+                required
+              />
+            </div>
+            <div className="flex-wrap">
+              <label htmlFor="new-password">Password:</label>
+              <input
+                id="new-password"
+                type="password"
+                placeholder="New Password"
+                name="password"
+              />
+
+              <label htmlFor="confirm-password" id="confirm">
+                Confirm Password:
+              </label>
+              <input
+                id="confirm-password"
+                type="password"
+                placeholder="Confirm Password"
+                name="confirmPassword"
+              />
+            </div>
+            <footer>
+              <button type="submit">Sign up</button>{' '}
+              <Link className="small-message" to="/login">
+                Already have an account?
+              </Link>
+            </footer>
+          </form>
         </div>
-        <div>
-          <Label htmlFor="registration-username-input">
-            Choose a username
-            <Required />
-          </Label>
-          <Input id="registration-username-input" name="username" required />
-        </div>
-        <div>
-          <Label htmlFor="registration-password-input">
-            Choose a password
-            <Required />
-          </Label>
-          <Input
-            id="registration-password-input"
-            name="password"
-            type="password"
-            required
-          />
-        </div>
-        <footer>
-          <Button type="submit">Sign up</Button>{' '}
-          <Link to="/login">Already have an account?</Link>
-        </footer>
-      </form>
+      </section>
     );
   }
 }
