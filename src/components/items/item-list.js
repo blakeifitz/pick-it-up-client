@@ -7,10 +7,8 @@ import { titleCase } from '../../misc-functions';
 
 export default class ItemList extends Component {
   handleClickDelete = (e) => {
-    console.log('ITEMLIST PROPS', this.props);
     e.preventDefault();
     const { category } = this.props.match.params;
-    console.log('CATEGORY TITLE', category);
     fetch(`${config.API_ENDPOINT}/category/${category}`, {
       method: 'DELETE',
       headers: {
@@ -59,3 +57,14 @@ export default class ItemList extends Component {
     );
   }
 }
+
+ItemList.defaultProps = {
+  match: {
+    params: {},
+  },
+  items: [
+    {
+      id: '',
+    },
+  ],
+};

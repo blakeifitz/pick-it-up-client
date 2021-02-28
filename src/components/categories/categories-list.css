@@ -4,8 +4,8 @@
 }
 
 .category-link {
-  background-color: #030f1f;
-  color: #b5b3b3;
+  background-color: whitesmoke;
+  color: rgb(70, 62, 62);
   display: block;
   font-family: var(--custom-font);
   font-size: 20px;
@@ -15,11 +15,12 @@
   text-decoration: none;
 }
 .category-link:hover {
-  color: rgb(238, 213, 101);
+  color: rgb(70, 62, 62);
   cursor: pointer;
 }
 .category-link.active {
-  background-color: #3f4247;
+  color: whitesmoke;
+  background-color: rgb(70, 62, 62);
 }
 #category-add-button {
   float: right;

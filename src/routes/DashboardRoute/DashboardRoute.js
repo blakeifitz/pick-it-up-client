@@ -228,5 +228,10 @@ class DashboardRoute extends Component {
     );
   }
 }
+DashboardRoute.defaultProps = {
+  match: {
+    params: {},
+  },
+};
 
 export default DashboardRoute;

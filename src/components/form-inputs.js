@@ -39,4 +39,8 @@ const FormInputs = (props) => {
     );
   });
 };
+FormInputs.defaultProps = {
+  items: [],
+};
+
 export default FormInputs;

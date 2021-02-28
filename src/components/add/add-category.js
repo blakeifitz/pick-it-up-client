@@ -28,7 +28,6 @@ export class AddCategory extends Component {
         return res.json();
       })
       .then((category) => {
-        console.log('CATEGORY', category);
         this.props.history.goBack();
       })
       .catch((res) => {

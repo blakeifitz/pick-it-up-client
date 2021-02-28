@@ -3,7 +3,6 @@ export const getItemsForCategory = (items = [], category) => {
 };
 
 export const getItem = (items = [], itemId) => {
-  console.log('MISC FUNCTIONS', itemId, items);
   return items.find((item) => item.id.toString() === itemId);
 };
 export const getLocation = (item = [], locations = []) => {

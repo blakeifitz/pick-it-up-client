@@ -8,7 +8,7 @@ import { BsTrashFill } from 'react-icons/bs';
 
 //creates a item that acts a link
 
-export default class ItemPage extends React.Component {
+export default class Item extends React.Component {
   static default = {
     handleDeleteItem: () => {},
   };
@@ -34,19 +34,17 @@ export default class ItemPage extends React.Component {
       });
   };
   render() {
-    console.log('ITEM IMGSRC', this.props.item.img_src);
     return (
       <div className="item">
-        <h2 className="item-title">
-          <Link to={`/finds/details/${this.props.item.id}`}>
-            {titleCase(this.props.item.name)}
-          </Link>
-        </h2>
-        <img
-          className="item-img"
-          alt="user image"
-          src={this.props.item.img_src}
-        />
+        <Link to={`/finds/details/${this.props.item.id}`}>
+          <h2 className="item-title">{titleCase(this.props.item.name)}</h2>
+
+          <img
+            className="item-img"
+            alt="user image"
+            src={this.props.item.img_src}
+          />
+        </Link>
         <button
           className="item-delete"
           type="button"
@@ -54,7 +52,19 @@ export default class ItemPage extends React.Component {
         >
           Remove <BsTrashFill />
         </button>{' '}
+        <button
+          className="mobile-remove-button"
+          onClick={this.handleClickDelete}
+        >
+          <BsTrashFill />
+        </button>
       </div>
     );
   }
 }
+Item.defaultProps = {
+  item: {
+    id: '',
+    name: 'Loading...',
+  },
+};

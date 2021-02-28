@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service';
 import UserContext from '../../contexts/UserContext';
+import logo from '../media/shovel.png';
 import './header.css';
 
 class Header extends Component {
@@ -36,7 +37,9 @@ class Header extends Component {
     return (
       <header className="header">
         <h1>
-          <Link to="/finds">Pick It Up!</Link>
+          <Link to="/finds">
+            <img src={logo} alt="animated-shovel" /> Pick-It-Up
+          </Link>
         </h1>
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()

@@ -89,6 +89,14 @@ class AddForm extends React.Component {
     }));
   };
 
+  removeItem = (e) => {
+    e.preventDefault(e);
+    this.state.items.pop();
+    this.setState((prevState) => ({
+      items: [...prevState.items],
+    }));
+  };
+
   render() {
     let { items } = this.state;
     const { error } = this.state;
@@ -107,7 +115,10 @@ class AddForm extends React.Component {
             {' '}
             <form className="registration-content" onChange={this.handleChange}>
               <div role="alert">{error && <p>{error}</p>}</div>
-              <button onClick={this.addItem}>Add another item</button>
+              <div className="add-remove-input">
+                <button onClick={this.addItem}>Add another item</button>
+                <button onClick={this.removeItem}>Remove last item</button>
+              </div>
               <FormInputs items={items} />
               <button id="submit-form" onClick={(e) => this.handleSubmit(e)}>
                 Save

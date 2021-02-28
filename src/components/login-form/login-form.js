@@ -35,13 +35,15 @@ class LoginForm extends Component {
   };
 
   componentDidMount() {
-    this.firstInput.current.focus();
+    if (this.firstInput.current) {
+      this.firstInput.current.focus();
+    }
   }
 
   render() {
     const { error } = this.state;
     return (
-      <form className="LoginForm" onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <div role="alert">{error && <p>{error}</p>}</div>
         <div>
           <label htmlFor="login-username-input">Username:</label>

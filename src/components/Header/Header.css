@@ -1,14 +1,27 @@
 header {
-  background-color: #c9dada;
+  display: absolute;
+  background-color: rgb(70, 62, 62);
+  padding-inline-start: 8px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 header h1 a,
 header h1 a:hover {
+  font-size: smaller;
   transition: none;
+  color: whitesmoke;
 }
 
 header span {
   margin: 10px auto;
+}
+
+header img {
+  max-height: auto;
+  max-width: 100px;
 }
 
 nav,
@@ -17,13 +30,14 @@ nav,
   right: 0px;
   text-align: right;
   padding-top: 10px;
+  font-style: italic;
 }
 
 .logged-in-nav span {
   display: block;
   margin: 0px;
   margin-right: 10px;
-  color: rgb(74, 86, 97);
+  color: rgb(192, 194, 196);
   font-style: italic;
 }
 
@@ -44,11 +58,11 @@ nav {
 }
 
 nav a {
-  color: black;
   margin: 10px 20px 0 0;
   text-decoration: none;
   vertical-align: middle;
   width: 100%;
+  color: whitesmoke;
 }
 
 @media all and (min-width: 600px) {

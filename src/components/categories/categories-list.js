@@ -25,3 +25,6 @@ export default class CategoryList extends Component {
     );
   }
 }
+CategoryList.defaultProps = {
+  categories: [{ title: 'Loading...' }],
+};

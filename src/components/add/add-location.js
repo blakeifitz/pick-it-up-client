@@ -8,6 +8,7 @@ export class AddLocation extends Component {
     history: {
       push: () => {},
     },
+    locations: [],
   };
   state = {
     addNew: false,
@@ -109,5 +110,7 @@ export class AddLocation extends Component {
     );
   }
 }
-
+AddLocation.defaultProps = {
+  locations: ['loading...'],
+};
 export default AddLocation;
