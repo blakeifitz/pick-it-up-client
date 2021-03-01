@@ -43,7 +43,7 @@ class LoginForm extends Component {
   render() {
     const { error } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="login-form">
         <h3>Get Started</h3>
         <p>
           I like to metal detect, arrowhead hunt, mushroom hunt, and fossil
@@ -55,24 +55,26 @@ class LoginForm extends Component {
           my demo account.
         </p>
         <div role="alert">{error && <p>{error}</p>}</div>
-        <div>
-          <label htmlFor="login-username-input">Username:</label>
-          <input
-            ref={this.firstInput}
-            id="login-username-input"
-            name="username"
-            type="text"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="login-password-input">Password:</label>
-          <input
-            id="login-password-input"
-            name="password"
-            type="password"
-            required
-          />
+        <div className="login-inputs">
+          <div>
+            <label htmlFor="login-username-input">Username:</label>
+            <input
+              ref={this.firstInput}
+              id="login-username-input"
+              name="username"
+              type="text"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="login-password-input">Password:</label>
+            <input
+              id="login-password-input"
+              name="password"
+              type="password"
+              required
+            />
+          </div>
         </div>
         <button id="login-submit" type="submit">
           Login

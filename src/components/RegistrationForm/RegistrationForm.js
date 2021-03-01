@@ -51,14 +51,15 @@ class RegistrationForm extends Component {
     return (
       <section id="registration" className="registration">
         <div className="registration-content">
-          <span onClick={this.handleClickCancel} className="close">
-            &times;
-          </span>
           <form
             onSubmit={this.handleSubmit}
             className="singup-form"
             aria-label="signup-form"
           >
+            {' '}
+            <span onClick={this.handleClickCancel} className="close">
+              &times;
+            </span>
             <h2>Create an Account</h2>
             <div role="alert">{error && <p>{error}</p>}</div>
             <div>

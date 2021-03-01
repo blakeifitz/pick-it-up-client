@@ -1,7 +1,7 @@
 .slider-image {
   position: absolute;
-  max-width: 100%;
-  height: auto;
+  max-width: 90%;
+  max-height: 90%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -49,6 +49,7 @@
 }
 
 .slider {
+  top: 20%;
   position: relative;
   display: flex;
   justify-content: center;

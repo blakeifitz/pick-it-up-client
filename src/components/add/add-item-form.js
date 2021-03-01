@@ -113,7 +113,7 @@ class AddForm extends React.Component {
         ) : (
           <div>
             {' '}
-            <form className="registration-content" onChange={this.handleChange}>
+            <form className="form-content" onChange={this.handleChange}>
               <div role="alert">{error && <p>{error}</p>}</div>
               <div className="add-remove-input">
                 <button onClick={this.addItem}>Add another item</button>

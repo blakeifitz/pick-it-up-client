@@ -1,4 +1,4 @@
-# _QuickCard_
+# _Pick-It-Up_
 
 API Repo: https://github.com/blakeifitz/pick-it-up-api
 Live App: http://pick-it-up-client.vercel.app/

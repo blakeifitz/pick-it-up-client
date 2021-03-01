@@ -60,7 +60,7 @@ export class AddLocation extends Component {
     let { locations } = this.props;
     const { error } = this.state;
     return (
-      <div className="registration-content">
+      <div className="form-content">
         <h2> Location</h2>
         {this.state.addNew === false ? (
           <div>
