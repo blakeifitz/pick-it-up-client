@@ -1,7 +1,7 @@
 # _QuickCard_
 
 API Repo: https://github.com/blakeifitz/pick-it-up-api
-Live App: https://github.com/blakeifitz/pick-it-up-client
+Live App: http://pick-it-up-client.vercel.app/
 
 <img src="src/media/screenshot-list.png" alt="screenshot" width="300"/>
 <img src="src/media/screenshot-fossil.png" alt="screenshot" width="400"/>
