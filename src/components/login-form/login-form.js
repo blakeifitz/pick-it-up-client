@@ -44,6 +44,16 @@ class LoginForm extends Component {
     const { error } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
+        <h3>Get Started</h3>
+        <p>
+          I like to metal detect, arrowhead hunt, mushroom hunt, and fossil
+          hunting. Over the years I have collected lots of items. Over time I
+          forget exactly where I found things or what stratigraphic age they
+          are. With this app a user can save details about items, the location
+          they were found, the category of item they are, and an image. To get
+          started register by pressing <i>Sign Up</i> or to just check it out
+          use my demo account.
+        </p>
         <div role="alert">{error && <p>{error}</p>}</div>
         <div>
           <label htmlFor="login-username-input">Username:</label>
