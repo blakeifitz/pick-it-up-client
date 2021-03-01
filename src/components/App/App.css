@@ -1,0 +1,257 @@
+html {
+  background: url(../media/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body {
+  font-family: 'Inter', Helvetica;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 400;
+  text-decoration: underline;
+  text-align: center;
+}
+h3 {
+  font-size: 26px;
+  font-weight: 400;
+  color: black;
+  text-align: center;
+}
+h4 {
+  text-decoration: underline;
+}
+footer {
+  position: relative;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  flex: 1;
+}
+
+.item-double {
+  flex: 2;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  color: black;
+  text-shadow: 2px 2px 4px #00000048;
+  transition: 0.75s;
+  letter-spacing: 1px;
+}
+
+img {
+  width: 100%;
+}
+
+main .error {
+  padding: 40px;
+}
+
+main .error a {
+  display: block;
+}
+
+button {
+  letter-spacing: 2px;
+  background-color: rgb(70, 62, 62);
+  color: whitesmoke;
+  border: none;
+  padding: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+button[type='submit'] {
+  margin-top: 10px;
+  width: 50%;
+  max-width: 400px;
+  color: whitesmoke;
+}
+button:hover {
+  border: none;
+  color: whitesmoke;
+  background-color: #555;
+  transition: 0.75s;
+}
+
+p {
+  font-size: 18px;
+}
+input[type='text'],
+input[type='password'],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+input[type='text']:focus,
+input[type='password']:focus {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  background-color: rgba(233, 224, 201, 0.6);
+  border: 3px solid #555;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  font-weight: 450;
+}
+
+input[type='submit'] {
+  background-color: rgba(226, 226, 226, 0.6);
+  color: whitesmoke;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+footer .leaflet-container {
+  height: 50vh;
+  width: 50vw;
+  margin: auto;
+}
+.button-group {
+  display: flex;
+  flex-direction: row;
+  color: rgb(70, 62, 62);
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus,
+.register a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.registration-content {
+  background-color: whitesmoke;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.login-content {
+  background-color: rgba(245, 245, 245, 0.8);
+  margin: 8% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: center;
+}
+.registration {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(10, 10, 10, 0.493);
+}
+.small-message {
+  position: absolute;
+  bottom: 0;
+  font-weight: 200;
+  font-size: smaller;
+  padding-left: 5px;
+}
+.leaflet-container {
+  margin-top: 5px;
+  height: 50vh;
+  width: 50vw;
+  margin: auto;
+}
+.button-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-page-img {
+  padding: 5px 0px 0px 5px;
+  border-width: 0px 6px 6px 0px;
+  border-style: double;
+  border-color: rgb(70, 62, 62 0.8);
+  background-color: rgba(10, 10, 10, 0.493);
+}
+
+.item-location-back {
+  visibility: hidden;
+}
+
+.mobile-remove-button {
+  visibility: hidden;
+  pointer-events: none;
+}
+#mapid {
+  height: 200px;
+}
+
+#mapid {
+  height: 200px;
+}
+#submit-form {
+  margin-top: 5px;
+}
+
+@media all and (max-width: 600px) {
+  .small-message {
+    position: inherit;
+  }
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+  }
+  .item-page-back {
+    display: none;
+  }
+  .item-location-back {
+    visibility: visible;
+    pointer-events: auto;
+  }
+  .item-delete {
+    display: none;
+  }
+  .mobile-remove-button {
+    visibility: visible;
+    pointer-events: auto;
+    float: right;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
