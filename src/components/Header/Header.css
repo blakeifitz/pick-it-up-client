@@ -1,0 +1,89 @@
+header {
+  display: absolute;
+  background-color: rgb(70, 62, 62);
+  padding-inline-start: 8px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+header h1 a,
+header h1 a:hover {
+  font-size: smaller;
+  transition: none;
+  color: whitesmoke;
+}
+
+header span {
+  margin: 10px auto;
+}
+
+header img {
+  max-height: auto;
+  max-width: 100px;
+}
+
+nav,
+.logged-in-nav {
+  position: absolute;
+  right: 0px;
+  text-align: right;
+  padding-top: 10px;
+  font-style: italic;
+}
+
+.logged-in-nav span {
+  display: block;
+  margin: 0px;
+  margin-right: 10px;
+  color: rgb(192, 194, 196);
+  font-style: italic;
+}
+
+.h-group {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+h1 {
+  padding-top: 0px;
+  font-size: 45px;
+  margin-top: 25px;
+}
+nav {
+  padding-top: 5px;
+  position: relative;
+}
+
+nav a {
+  margin: 10px 20px 0 0;
+  text-decoration: none;
+  vertical-align: middle;
+  width: 100%;
+  color: whitesmoke;
+}
+
+@media all and (min-width: 600px) {
+  .h-group {
+    flex-direction: row;
+    padding: 0 3%;
+  }
+  h1 {
+    padding-top: 0px;
+    font-size: 45px;
+    margin-top: 25px;
+  }
+  nav {
+    padding-top: 5px;
+    position: relative;
+  }
+  .logged-in-nav {
+    align-content: center;
+    margin-right: 25px;
+  }
+  header {
+    margin-top: 0;
+  }
+}
