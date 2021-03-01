@@ -15,7 +15,7 @@ _As a user:_
 - You can click on a map to save the coordinates of that location.
 - You can save items that cannot be accessed by other users.
 
-A lot of my hobbies include going to different places to find a variety of items. I like to metal detect, arrowhead hunt, mushroom hunt, and fossil hunting. Over the years I have collected
+A lot of my hobbies include going to different places to find a variety of items. I like to metal detect, arrowhead hunt, mushroom hunt, and fossil hunt. Over the years I have collected
 lots of items. Over time I forget exactly where I found things or what stratigraphic age they are. With this app a user can save details about items, the location they were found, and the category of item they are. A user can choose to add to previous locations or add a new one using a React Leaflet Map. A user can save a photo, notes, and a location for each item. There is a list of all a user's items. Those items can be clicked on to see a detailed view with item and location info. A user can view stratigraphic data for the coordinates of their locations. I used Macrostrat API ( https://macrostrat.org/ ) to accomplish this.
 
 ### This app was created with:
