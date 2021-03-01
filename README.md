@@ -3,8 +3,8 @@
 API Repo: https://github.com/blakeifitz/pick-it-up-api
 Live App: https://github.com/blakeifitz/pick-it-up-client
 
-<img src="./src/media/screenshot-list.png" alt="screenshot" width="300"/>
-<img src="./src/media/screenshot-fossil.png" alt="screenshot" width="400"/>
+<img src="src/media/screenshot-list.png" alt="screenshot" width="300"/>
+<img src="src/media/screenshot-fossil.png" alt="screenshot" width="400"/>
 ### This is Pick-It-Up, an application to easily store your finds.
 
 _As a user:_
