@@ -12,7 +12,7 @@ export class ItemPage extends Component {
     return (
       <section className="item-page-section">
         <h2>{titleCase(this.props.item.name)}</h2>
-        <p>{this.props.item.description}</p>
+        <p>Description: {this.props.item.description}</p>
         <button
           className="item-page-back"
           onClick={() => this.props.history.goBack()}
