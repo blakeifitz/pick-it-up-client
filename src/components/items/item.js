@@ -41,7 +41,7 @@ export default class Item extends React.Component {
 
           <img
             className="item-img"
-            alt="user image"
+            alt="user item"
             src={this.props.item.img_src}
           />
         </Link>

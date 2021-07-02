@@ -31,7 +31,7 @@ export default class ItemList extends Component {
   render() {
     let { category } = this.props.match.params;
     return (
-      <div className="main-list">
+      <div>
         {!category ? <h2>All Items</h2> : <h2>{titleCase(category)}</h2>}
         <ul>
           {this.props.items.map((item) => (

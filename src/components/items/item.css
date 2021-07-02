@@ -43,8 +43,10 @@
   font-weight: 400;
   font-size: 20px;
   margin: 0;
-  max-width: 80%;
+  max-width: 75%;
   min-height: 32px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .item-title a {
   position: relative;
@@ -54,9 +56,10 @@
 .item-img {
   z-index: 2;
   position: relative;
-  margin-top: -32px;
   height: 95%;
+  margin-top: -32px;
   width: auto;
+  max-width: 120px;
   border-style: inset;
   border-color: rgba(245, 245, 245, 0.877);
   background-color: rgba(10, 10, 10, 0.493);
